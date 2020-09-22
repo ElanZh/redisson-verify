@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "e279449d-10b6-4bd8-8cca-041b4cd73da5",
+		"name": "RedissonVerify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "查询数量",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/quantity/value/1"
+			},
+			"response": []
+		},
+		{
+			"name": "无锁减法",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/quantity/subtractValue/nonelock/1"
+			},
+			"response": []
+		},
+		{
+			"name": "redisson锁减法",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/quantity/subtractValue/redlock/1"
+			},
+			"response": []
+		},
+		{
+			"name": "库锁减法",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/quantity/subtractValue/dblock/1"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

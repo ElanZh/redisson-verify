@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: redisson-verify
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    url: jdbc:h2:file:D:/H2_DB/redisson-verify/db
+    username: root
+    password: admin
+  jpa:
+    # H2
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        format_sql: true
+  h2:
+    console:
+      path: /h2
+      enabled: true
+      settings:
+        web-allow-others: true
+
+# set actuator output level
+management:
+  endpoint:
+    health:
+      show-details: always
+
+decorator:
+  datasource:
+    p6spy:
+      logging: slf4j
+      log-format: 执行SQL- 耗时 %(executionTime)ms | 类型 %(category) | connection%(connectionId) | %(sqlSingleLine);
